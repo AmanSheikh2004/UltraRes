@@ -133,6 +133,13 @@ Feel free to fork the repo or open issues to collaborate.
 
 ---
 
+## 👥 Contributors
+
+- [Aman Ramzan Sheikh](https://github.com/AmanSheikh2004)
+- [Mohammed Uvez Khan](https://github.com/mohammeduvez29)
+
+---
+
 ## 📜 License
 
 MIT License
