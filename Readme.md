@@ -62,9 +62,7 @@ pip install flask torch torchvision numpy opencv-python pillow
 
 ### 3. 🔗 Download Pre-trained ESRGAN Model
 
-GitHub restricts file sizes above 100MB.  
-So, the ESRGAN model (`RRDB_ESRGAN_x4.pth`, ~300MB) is hosted externally.
-
+The ESRGAN models are hosted externally.
 📥 [Download from Google Drive](https://drive.google.com/your-model-link)
 
 After downloading, place it in the `models/` folder:
