@@ -88,15 +88,34 @@ def upscale():
 
     file = request.files['image']
     alpha = float(request.form.get('alpha', 1.0))  # Default to 1.0 if not provided
+    resolution = request.form.get('resolution', '1080p')
+
+    # Define resolution presets
+    resolution_map = {
+        '1080p': (1920, 1080),
+        '4K': (3840, 2160)
+    }
 
     try:
+        target_resolution = resolution_map.get(resolution)
+        if not target_resolution:
+            return jsonify({'error': 'Invalid resolution selected'}), 400
+
         img = Image.open(file.stream)
         img = cv2.cvtColor(np.array(img), cv2.COLOR_RGB2BGR)
 
-        # Interpolate model with the given alpha (currently scales the model itself)
+        # Interpolate model with alpha
         model_interp = interpolate_model(alpha)
         output = process_image(img, model_interp)
-        
+
+        # Resize output to target resolution (preserving aspect ratio)
+        scale_factor = 2 if resolution == '1080p' else 4
+        new_w = output.shape[1] * scale_factor
+        new_h = output.shape[0] * scale_factor
+        output = cv2.resize(output, (new_w, new_h), interpolation=cv2.INTER_CUBIC)
+
+
+        # Prepare image for web
         output_img = Image.fromarray(cv2.cvtColor(output, cv2.COLOR_BGR2RGB))
         buffered = BytesIO()
         output_img.save(buffered, format="PNG")
