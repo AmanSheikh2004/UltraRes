@@ -63,7 +63,7 @@ pip install flask torch torchvision numpy opencv-python pillow
 ### 3. 🔗 Download Pre-trained ESRGAN Model
 
 The ESRGAN models are hosted externally.
-📥 [Download from Google Drive]([https://drive.google.com/drive/folders/1xmOsGLT0_ei6ss5l_IHuj7LzzdXhc6eo?usp=sharing])
+📥 [Download from Google Drive](https://drive.google.com/drive/folders/1xmOsGLT0_ei6ss5l_IHuj7LzzdXhc6eo?usp=sharing)
 
 After downloading, place it in the `models/` folder:
 
