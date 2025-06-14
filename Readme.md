@@ -35,9 +35,10 @@ UltraRes/
 ├── models/                 # Place downloaded ESRGAN model here
 │   └── README.txt          # Contains model download link
 ├── static/                 # CSS, JS, and assets
+    └── script.js           # JS logic for frontend interaction
+    └── styles.css          # Tailwind-enhanced styles
 ├── templates/              # HTML files (index.html)
-├── script.js               # JS logic for frontend interaction
-├── styles.css              # Tailwind-enhanced styles
+├── images/                 # Sample output images
 └── README.md               # This file
 ```
 
